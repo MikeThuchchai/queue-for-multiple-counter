@@ -2,9 +2,9 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { createHashHistory } from 'history'
 import { routerMiddleware, routerActions } from 'connected-react-router'
-import createRootReducer from '../reducers'
-import * as counterActions from '../actions/counter'
-import type { counterStateType } from '../reducers/types'
+import createRootReducer from '../redux'
+import * as counterActions from '../redux/counter'
+import type { counterStateType } from '../redux/types'
 
 const history = createHashHistory()
 
@@ -51,9 +51,9 @@ const configureStore = (initialState?: counterStateType) => {
 
   if (module.hot) {
     module.hot.accept(
-      '../reducers',
+      '../redux',
       // eslint-disable-next-line global-require
-      () => store.replaceReducer(require('../reducers').default)
+      () => store.replaceReducer(require('../redux').default)
     )
   }
 
