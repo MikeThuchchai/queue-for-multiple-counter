@@ -1,5 +1,9 @@
 {
   "extends": "erb",
+  "rules": {
+    "flowtype/semi": [2, "never"],
+    "semi": ["error", "never"]
+  },
   "settings": {
     "import/resolver": {
       "webpack": {

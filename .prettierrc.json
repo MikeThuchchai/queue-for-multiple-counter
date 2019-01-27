@@ -3,9 +3,11 @@
     {
       "files": [".prettierrc", ".babelrc", ".eslintrc", ".stylelintrc"],
       "options": {
+        "semi": false,
         "parser": "json"
       }
     }
   ],
+  "semi": false,
   "singleQuote": true
 }
